@@ -1,0 +1,20 @@
+.box {
+    background-color: blue;
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    color: white;
+}
+
+.box:nth-child(2){
+    margin-left: 35px;
+}
+.box:nth-child(3){
+    margin-left: 20px;
+}
+/*
+:nth-child(N) --> 부모(box)안의 모든 요소 중 N번째 요소
+
+지금과 같은 CSS 코딩은 디바이스 크기가 다 다르기 때문에 문제가 발생한다 
+==> 이를 해결하기 위해 나온것이 flexbox
+*/
