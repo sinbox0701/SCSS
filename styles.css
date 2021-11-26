@@ -1,7 +1,9 @@
 .wrapper{
     display: flex;
+    /* Main Axis */
     justify-content: space-around;
-    align-items: flex-start;
+    /* Cross Axis */
+    align-items: center;
     height: 100vh
 }
 
@@ -13,30 +15,9 @@
 }
 
 /*
-Flex의 핵심 2가지
-1. row(행): 가로
-2. column(열): 세로
-
-flex container의 flex-direction 기본 값은 row 
-이때 해당 row에 있는 item의 위치를 변경시키기 위해서는 justify-content를 사용
-==> 수평 축(가로)에 있는 flex children의 위치를 변경
-
-수평 축 == main-axis 
-이 이름을 적용시켜 위 예시를 다시 생각해보면 다음과 같다.
-
-flex-direction의 기본 값이 row일 때 수평축이 곧 main-axis ==> 가로가 곧 main-axis
-이때 main-axis에서 justify-content를 사용하면 item을 움직일 수 있는 것인데 
-main-axis가 수평축, 가로이기 때문에 가로로 item이 움직인다.
-
-다른 axis로는 cross-axis가 존재 
-flex container가 row을 가질 때 cross-axis는 단어 그대로 가로지르기 때문에 수직(vertical)
-이때 cross-axis에서 item을 움직이기 위해서는 align-items를 사용 
-==> 수직, 세로로 움직이는 것
-
-이는 차후 direction을 배울 때 매우 중요하므로 main-axis와 cross-axis 용어 및 개념을 잊지 말자.
-
-align-center를 사용할 때는 반드시 flex container(부모)의 높이가 어느 정도 되는지 반드시 확인하자. 
-이미 item과 높이가 동일하여 위치를 변환시킬 수 없는 경우가 많기 때문이다.
-
-vh: 브라우저와 비교하여 벡터로 나타냄(1vh = 브라우저 높이 * 1/100)
+flex-direction:row
+--> default
+flex-direction:column
+Main axis=세로(justify-content) 
+Cross axis=가로(align-items)
 */
