@@ -6,11 +6,11 @@ body {
     display: flex;
     justify-content: space-around;
     width: 100%;
+    height: 100vh;
 }
 
 .box{
-    width: 300px;
-    height: 200px;
+    flex-basis: 30%;
     background: peru;
     color: white;
     font-size: 50px;
@@ -23,23 +23,10 @@ body {
     flex-shrink: 2;
   }
 /*
-flexbox가 정의되어 있을 때, 각 child에게 지정하는 property.
-:반응형 디자인(responsive design)을 할 때 유용하다.
+flex-basis
 
-1) flex-shrink: flexbox가 쥐어짤 때, element의 행동의 정의함
-ex) flex-wrap: nowrap일때, 화면이 작아지면 width가 설정되어있어도 줄어들지.
-- flex-shrink: 1; - flex-shrink: n(정수); --> 여러 개 element 중 특정 element만 덜 줄어들거나, 더 줄어들게 할 수 있음!!
-
-2) flex-grow: shrink와 반대, 화면이 늘어남에 따라 box 크기가 얼마나 늘어날까?
-- flex-grow: 1; - flex-grow: 0; - 남아있는 공간을 가져옴 (space를 없애고)
--> 즉, 남아있는 공간, 여백이 있을 때만 grow 가능
-=> 화면이 커질 때, element도 함께 커지길 원할 때 사용할 수 있음
-=> flex-grow property가 0인 상태거나, 따로 정의되지 않았다면, 화면이 커져도 각 element 크기가 커지지 않음
-(여백만 늘어나게 됨)
-
-
--shrink : 움츠려 들다.
-해당box가 다르게 줄어들기를 원할 때 씀. default : 1
--grow
-flex-shrink와 같지만 반대로(증가) 작용함. default : 0
+shrink, grow 되기전에 element에게 초기 size를 주는 것.
+but 자주 사용 X basis 정의 안할시 width와 같은 값이니까.
+⭐ flex-basis: 늘거나 줄기 전 initial size ,
+grow 1이면 정한 크기 무너진다 ⭐
 */
