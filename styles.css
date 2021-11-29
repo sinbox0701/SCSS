@@ -1,9 +1,6 @@
 .wrapper{
     display: flex;
-    /* Main Axis */
     justify-content: space-around;
-    /* Cross Axis */
-    align-items: center;
     height: 100vh
 }
 
@@ -13,11 +10,21 @@
     background: peru;
     color: white;
 }
+.box:nth-child(2){
+    order: 1;
+}
 
 /*
-flex-direction:row
---> default
-flex-direction:column
-Main axis=세로(justify-content) 
-Cross axis=가로(align-items)
+.box:nth-child(2){
+    align-self: center;
+}
+.box:nth-child(3){
+    align-self: flex-end;
+}
+
+여태는 부모(wrapper)가 자식(box)를 옮기는 방식
+- align-self: align-item이랑 비슷하나 하나의 박스에만 해당
+--> 부모에 height 설정해야함
+- order: 순서 변경 (HTML변경이 어려울때)
+default: 0이므로 order:1 하면 제일 뒤로 밀림
 */
