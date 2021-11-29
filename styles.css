@@ -1,7 +1,13 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
 .wrapper{
     display: flex;
     justify-content: space-around;
-    height: 100vh
+    align-content: space-around;
+    height: 100vh;
+    flex-wrap: wrap;
 }
 
 .box{
@@ -9,22 +15,31 @@
     height: 200px;
     background: peru;
     color: white;
-}
-.box:nth-child(2){
-    order: 1;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*
-.box:nth-child(2){
-    align-self: center;
-}
-.box:nth-child(3){
-    align-self: flex-end;
-}
+wrap, nowrap, reverse, align-content
+- 부모(wrapper), 자식(box) 모두 flex로 해주면 box에 있던 글자가 중앙에 위치하게 됨
 
-여태는 부모(wrapper)가 자식(box)를 옮기는 방식
-- align-self: align-item이랑 비슷하나 하나의 박스에만 해당
---> 부모에 height 설정해야함
-- order: 순서 변경 (HTML변경이 어려울때)
-default: 0이므로 order:1 하면 제일 뒤로 밀림
+1) flex-wrap
+- flexbox는 width보다도, '같은 줄'에 있도록 하는 것을 우선시함 ==> 따라서 width가 변경되더라도 깉은줄에 최대한 우겨넣음
+-> flex-wrap: wrap; (child의 사이즈를 유지하라고 하는 것)
+-> nowrap; (child를 모두 같은 줄에 정렬함, 이때 width가 줄어들 수 있음) ==> default
+
+2) reverse
+- flex-direction: row-reverse; (오른쪽에서부터 1이 시작)
+- column-reverse;
+- flex-wrap: wrap-reverse; (한 줄이 되지 않아도 아래에서 위로 정렬되게)
+
+* wrap으로 정렬 시 (여러 줄으로, 각 item의 width를 유지하면서)
+각 줄(기본: row) 간의 간격이 생기는데, 이것(line-break)을 'align-content'라는 property로 조절 가능
+
+3) align-content (line을 변경, line은 cross-axis에 있는 상태)
+- justify-content와 비슷하지만 'line'에 관한 것 (각 block이 여러 행에 걸쳐 나올 때, 행간 공백을 얼마나 둘 건지?)
+- align-content: flex-start; 
+- align-content: space-around; ==> default
 */
