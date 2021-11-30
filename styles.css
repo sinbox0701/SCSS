@@ -4,32 +4,43 @@ body {
 
 .wrapper{
     display: grid;
-    grid-template-columns: 200px 200px 200px;
-    grid-template-rows: 100px 50px;
-    gap: 10px;
+    grid-template-columns: 150px auto 150px;
+    grid-template-rows: 100px repeat(2,200px) 100px;
+    grid-template-areas: 
+        "header header header header"
+        "content content content nav"
+        "content content content nav"
+        "footer footer footer footer"
+    ;
 }
 
-.box{
-    background: peru;
-    color: white;
-    font-size: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+.header {
+    background-color: #2ecc71;
+    grid-area: header;
+  }
+  .content {
+    background-color: #3498db;
+    grid-area: content;
+  }
+  .nav {
+    background-color: #8e44ad;
+    grid-area: nav;
+  }
+  .footer {
+    background-color: #f39c12;
+    grid-area: footer;
+  }
 
 /*
-flexbox처럼 grid 역시 container(부모)에서 작용
-grid의 행과 열이 몇개있는지 확인
--Column(열)
-grid-template-columns: 컬럼 개수
-column-gap: 열끼리 간격
-- Row(행)
-row-gap: 행끼리 간격
+grid
+repeat(n,size) --> size 크기를 n개 생성
 
-row-gap과 column-gap을 같은 크기를 주고 싶을때
-gap을 이용
+grid-template-areas --> layout design
+wrapper(부모)에 grid-template-areas를 이용하여 template을 만들고
+자식 컨텐츠들에게 grid-area를 이용해 이름을 붙인다
 
-grid box는 font-size에 영향을 받는다. -> font가 줄어들면 같이 줄어듬
---> grid-template-rows를 설정 해주어야함
+grid가 적용되지 않을때 알아볼 규칙
+1. grid 내부에 grid-area의 영역이 전부 이어져 있는가? (ex: header 영역이 둘로 쪼개져 있고 그러면 안됨.)
+2. grid 내부에 grid-area의 영역이 직사각형인가? (ex: header 영역이 ㄴ자 ㄱ자 등이어도 안됨.)
+
 */
