@@ -23,10 +23,8 @@ body {
     flex-shrink: 2;
   }
 /*
-flex-basis
+Grid
+grid가 필요한 이유: flexbox만으로는 grid(격자 무늬)를 만들기 어렵다
+(flexbox는 박스의 위치를 옆 or 가운데로 옮기거나 나누는데 용이)
 
-shrink, grow 되기전에 element에게 초기 size를 주는 것.
-but 자주 사용 X basis 정의 안할시 width와 같은 값이니까.
-⭐ flex-basis: 늘거나 줄기 전 initial size ,
-grow 1이면 정한 크기 무너진다 ⭐
 */
