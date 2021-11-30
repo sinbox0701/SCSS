@@ -5,8 +5,8 @@ body {
 .wrapper{
     display: grid;
     gap: 10px;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: repeat(4, 100px);
+    grid-template-columns: [first-line] 100px [second-line] 100px [third-line] 100px [fourth-line] 100px [fifth-line];
+    grid-template-rows: repeat(4, [sexy-line] 100px);
 }
 
 .header {
@@ -15,8 +15,8 @@ body {
   }
   .content {
     background-color: #3498db;
-    grid-column: 1 / -2;
-    grid-row: span 2;
+    grid-column: first-line / fourth-line;
+    grid-row: sexy-line 2 /sexy-line 4;
   }
   .nav {
     background-color: #8e44ad;
@@ -28,10 +28,5 @@ body {
   }
 
 /*
-[grid-column(row)-start(end)를 일일히 하는 대신, 이렇게 start와 end를 한꺼번에 명시할 수 있다. 이게 바로 '/'를 사용하는 shortCuts이다.]
-
-● grid-column: (start) / (end);
-● grid-row: (start) / (end);
-● -1, -2, -3, ··· ▷ 끝부터 cell 세기 (제일 마지막이 -1)
-● (start) / span (cell 수) ▷ span은 얼마만큼의 cell을 차지하는지를 의미한다. start는 생략할 수 있다.
+line에 이름 넣고 사용하는 방법
 */
