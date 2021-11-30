@@ -28,7 +28,7 @@
 - [x] grid-row-start
 - [x] grid-row-end
 - [x] grid-column
-- [ ] grid-row
+- [x] grid-row
 - [ ] grid-template
 - [ ] justify-items
 - [ ] align-items
