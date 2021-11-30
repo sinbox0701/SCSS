@@ -23,11 +23,11 @@
 - [x] row-gap
 - [x] gap
 - [x] grid-template-areas
-- [ ] grid-column-start
-- [ ] grid-column-end
-- [ ] grid-row-start
-- [ ] grid-row-end
-- [ ] grid-column
+- [x] grid-column-start
+- [x] grid-column-end
+- [x] grid-row-start
+- [x] grid-row-end
+- [x] grid-column
 - [ ] grid-row
 - [ ] grid-template
 - [ ] justify-items
