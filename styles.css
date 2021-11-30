@@ -4,29 +4,44 @@ body {
 
 .wrapper{
     display: grid;
-    gap: 10px;
-    grid-template-columns: [first-line] 100px [second-line] 100px [third-line] 100px [fourth-line] 100px [fifth-line];
-    grid-template-rows: repeat(4, [sexy-line] 100px);
+    gap: 5px;
+    height: 50vh;
+    grid-template:
+        "header header header header" 1fr
+        "content content content nav" 2fr
+        "footer footer footer footer" 1fr / 1fr 1fr 1fr 1fr
+    ;
 }
 
 .header {
     background-color: #2ecc71;
-    grid-column: span 4;
-  }
-  .content {
+    grid-area: header;
+}
+.content {
     background-color: #3498db;
-    grid-column: first-line / fourth-line;
-    grid-row: sexy-line 2 /sexy-line 4;
-  }
-  .nav {
+    grid-area: content;
+}
+.nav {
     background-color: #8e44ad;
-    grid-row: span 2;
-  }
-  .footer {
+    grid-area: nav;
+}
+.footer {
     background-color: #f39c12;
-    grid-column: span 4;
-  }
+    grid-area: footer;
+}
 
 /*
-line에 이름 넣고 사용하는 방법
+fr(fraction)은 사용 가능한 공간을 의미한다. 즉 기본적으로 가능한 만큼의 공간을 차지한다.
+fr은 전역으로 결정되는 것이 아닌 grid container에서 결정된다(여기서는 .grid)
+따라서 fr을 쓰기 위해서는 grid container에 height을 명시해야 한다. (3:50)
+이는 더이상 px등의 절대단위를 사용하지 않게끔 해주는 좋은 단위이다.
+니콜라스는 이게 완전 최고라고 하니까 우리도 애용하자!!
+
+[grid-template]
+"...cellNames(grid-area)" (row크기)
+...
+"...cellNames(grid-area)" (row크기(높이))/ (각 column의 크기 [repeat()은 쓸 수 없다])
+
+항상 block은 width와 height 주어져 있지 않은 경우에는 width는 가능한 한 최댓값, height은 0이다.
+=> fr을 쓰려면 grid container에 height만 써도 동작하지만, width만 쓰면 동작하지 않는 이유가 이것이다.
 */
