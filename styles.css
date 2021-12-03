@@ -4,36 +4,48 @@ body {
 
 .wrapper{
     display: grid;
+    color: white;
     gap: 5px;
-    height: 250vh;
-    grid-template-columns: repeat(4, 100px);
+    grid-template-columns: 100px;
     grid-template-rows: repeat(4, 100px);
-    place-content: start center;
+    grid-auto-flow: column;
+    grid-auto-columns: 100px;
+    
 }
 
-.header {
+.item:nth-child(odd) {
     background-color: #2ecc71;
 }
-.content {
+  
+.item:nth-child(even) {
     background-color: #3498db;
-}
-.nav {
-    background-color: #8e44ad;
-}
-.footer {
-    background-color: #f39c12;
 }
 
 /*
-items는 각각의 cell을 의미한다면 content는 그리드 전체를 의미한다.
-jusitfy(align)-items은 각각의 셀 내부에서 그리드 요소를 움직이는 것이고
-justify(align)-content은 즉 그리드 전체를 움직이게 된다.
+● align-self
+● justify-self
+● place-self: (수직) (수평);
+▷ child에만 적용돠는 property이다.
 
-[align이랑 jusitfy값을 전부 건드릴 수 있는 속성]
-place-items: y(align) x(justify);
-place-content: y(align) x(justify);
+● grid-auto-rows: (크기);
+▷ 만들어놓은 row보다 더 많은 content가 있으면, 자동으로 row를 만들어라.
 
-* 참고로 justify(align)(place)-content(s)를 다룰 떄,
-stretch 속성은 먹히지 않는다! 이럴때는 그리드 콘테이너에
-height을 주고 각 cell에 fr을 쓰면 얼추 비슷하게 된다
+grid-template-columns: repeat(4, 100px);
+grid-template-rows: 100px;
+grid-auto-rows: 100px;
+이런식으로 grid-auto-rows 사용
+
+● grid-auto-flow: (방향); [기본값: row]
+▷ flex-direction과 비슷하다. --> 기준이 변경댐
+▷ row가 끝날 때 새로운 row를 만들지, 새로운 column을 만들지 결정한다.
+
+● grid-auto-columns: (크기);
+▷ grid-auto-flow: column;일때 작동한다.
+
+grid-template-columns: 100px;
+grid-template-rows: repeat(4, 100px);
+grid-auto-flow: column;
+grid-auto-columns: 100px;
+이런식으로 grid-auto-flow & grid-auto-columns 사용
+
 */
