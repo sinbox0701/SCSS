@@ -1,34 +1,21 @@
 @import "_variables";
+@import "_mixins";
+
 body {
     background: $bg;
 }
-h2 {
-    color: black;
-}
-.box {
-    margin-top: 20px;
-    &:hover {
-      background-color: green;
+a{
+    margin-bottom: 10px;
+    &:nth-child(odd) {
+        @include link(white);
     }
-    h2 {
-      color: blue;
-      &:hover {
-        color: red;
-      }
-    }
-    button {
-      color: red;
+    &:nth-child(even) {
+        @include link(blue);
     }
 }
-// 이걸 고치면 styles.css가 자동으로 바뀜
-// error도 알려줌
-/*
-    Variable: color나 style등을 저장하고 싶을때 사용
-    _[파일명].scss로 사용 --> css로 변환하지 않았으면 하는 파일들은 언더바(_)를 붙인다.
-    그리고 import해서 사용
 
-    Nesting: 코드를 좀 더 정확하게 함
-    여러 같은 이름의 태그중 내가 원하는 태그에만 사용하고싶을때
-    태그 내부에서 사용가능하게 함
+
+/*
+    MIXIN: scss functionality를 재사용하게 해줌
 
 */

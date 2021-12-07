@@ -1,0 +1,19 @@
+@mixin link($color) {
+    text-decoration: none;
+    display: block;
+    color: $color;
+}
+/*
+@mixin link($word) {
+    text-decoration: none;
+    display: block;
+    @if $word == "odd" {
+        color:blue;
+    @else {
+        color:red;
+    }
+}
+이런식으로도 작성가능
+*/
+//@mixin을 이용하여 사용
+//link라는 이것을 재사용하게끔 해줌
