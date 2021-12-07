@@ -1,1 +1,1 @@
-@charset "UTF-8";body{background:#e7473c}a{margin-bottom:10px}a:nth-child(even),a:nth-child(odd){text-decoration:none;display:block;color:#fff}a:nth-child(even){color:#00f}
+@charset "UTF-8";a,button{font-family:inherit;border-radius:7px;font-size:12px;text-transform:uppercase;padding:5px 10px;background-color:peru;color:#fff;font-weight:500}body{background:#e7473c}a{text-decoration:none}button{border:0}

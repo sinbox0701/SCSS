@@ -1,21 +1,22 @@
 @import "_variables";
-@import "_mixins";
+@import "_buttons";
 
 body {
     background: $bg;
 }
 a{
-    margin-bottom: 10px;
-    &:nth-child(odd) {
-        @include link(white);
-    }
-    &:nth-child(even) {
-        @include link(blue);
-    }
+    @extend %button;
+    text-decoration: none;
+}
+  
+button {
+    @extend %button;
+    border: none;
 }
 
 
 /*
-    MIXIN: scss functionality를 재사용하게 해줌
+   Extends: 같은 코드를 중복하고 싶지않을때 사용
+   @extend를 이용, 여기는 값에 %변수를 사용한다
 
 */
