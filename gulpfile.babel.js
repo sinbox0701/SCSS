@@ -10,9 +10,12 @@ const routes = {
     css: {
         watch: "src/scss/*",
         src: "src/scss/styles.scss",
-        dest: "dest/css"
+        dest: "dist/css"
     }
 };
+//src/scss 아래 모든 내용 관찰
+//src/scss/styles.scss 내용은 css형식으로 compile
+//dist/css로 보냄
 
 const styles = () =>
     gulp
@@ -31,7 +34,7 @@ const watch = () => {
     gulp.watch(routes.css.watch, styles);
 };
 
-const clean = () => del(["dest/"]);
+const clean = () => del(["dist/"]);
 
 const prepare = gulp.series([clean]);
 
