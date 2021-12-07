@@ -61,6 +61,13 @@
 - [ ] Extend
 - [ ] Responsive Mixins
 
+### SCSS란?
+- stylus: 조금 다르게 사용하는 css문법들을 일반 css처럼 보이게 도와줌
+- less: 조금 다르게 사용하는 css문법들을 일반 css처럼 보이게 도와줌
+
+CSS를 PL처럼 만든다!
+ 
+
 ## To Clone:
 
 - [ ] [https://besthorrorscenes.com/](https://besthorrorscenes.com/)
