@@ -1,22 +1,15 @@
-@import "_variables";
-@import "_buttons";
+@import "_mixins";
 
-body {
-    background: $bg;
+h1 {
+    color:red;
+    @include responsive("iphone"){
+        color: yellow;
+    }
+    @include responsive("iphone-l"){
+        font-size: 60px;
+    }
+    @include responsive("tablet"){
+        color: green;
+    }
 }
-a{
-    @extend %button;
-    text-decoration: none;
-}
-  
-button {
-    @extend %button;
-    border: none;
-}
-
-
-/*
-   Extends: 같은 코드를 중복하고 싶지않을때 사용
-   @extend를 이용, 여기는 값에 %변수를 사용한다
-
-*/
+// _mixin의 @content로 @include responsive 내부 내용이 들어감

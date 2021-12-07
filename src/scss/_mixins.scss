@@ -1,19 +1,30 @@
-@mixin link($color) {
-    text-decoration: none;
-    display: block;
-    color: $color;
-}
-/*
-@mixin link($word) {
-    text-decoration: none;
-    display: block;
-    @if $word == "odd" {
-        color:blue;
-    @else {
-        color:red;
+$minIphone: 500px;
+$maxIphone: 690px;
+$minTablet: $minIphone + 1;
+$maxTablet: 1120px;
+
+@mixin responsive($device) {
+    @if $device == "iphone" {
+        @media screen and (min-width: $minIphone)  and (max-width: $maxIphone) {
+            @content;
+        }
+    }
+    @else if $device == "tablet" {
+        @media screen and (min-width: $minTablet)  and (max-width: $maxTablet) {
+            @content;
+        }
+    }
+    @else if $device == "iphone-l" {
+        @media screen and (min-width: $minIphone)  and (max-width: $maxIphone) and (orientation: landscape) {
+            @content;
+        }
+    }
+    @else if $device == "ipad-l" {
+        @media screen and (min-width: $minTablet)  and (max-width: $maxTablet) and (orientation: landscape) {
+            @content;
+        }
     }
 }
-이런식으로도 작성가능
-*/
+
 //@mixin을 이용하여 사용
-//link라는 이것을 재사용하게끔 해줌
+//@content --> 다른 곳에서 추가한 내용을 가져옴
